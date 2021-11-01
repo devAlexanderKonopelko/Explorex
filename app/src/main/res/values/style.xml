@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="BaseBottomSheetTheme" parent="Theme.MaterialComponents.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BaseBottomSheetTheme.RoundedCorners</item>
+    </style>
+    <style name="BaseBottomSheetTheme.RoundedCorners" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/shape_white_top_cornered_15dp</item>
+    </style>
+</resources>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+
+        <variable
+            name="place"
+            type="com.konopelko.explorex.data.api.entity.response.place.getnearby.GetNearbyPlacesResponse.PointOfInterest" />
+    </data>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/placeDetailsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:behavior_hideable="true"
+            app:behavior_peekHeight="@dimen/size_250"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+            <View
+                android:id="@+id/iosLine"
+                android:layout_width="@dimen/size_l28"
+                android:layout_height="@dimen/size_xs5"
+                android:layout_marginTop="@dimen/spacing_m"
+                android:background="@drawable/shape_gray_cornered_5dp"
+                android:elevation="@dimen/spacing_zero"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <FrameLayout
+                android:id="@+id/placeDetailsNameContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_m"
+                app:layout_constraintTop_toBottomOf="@+id/iosLine">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_xl86"
+                    android:background="@drawable/shape_gradient_purple" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@{place.info.name}"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_s4"
+                    tools:text="Title" />
+            </FrameLayout>
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/placeDetailsCategoriesChipGroup"
+                categoriesChips="@{place.info.categories}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_m"
+                android:layout_marginTop="@dimen/spacing_m"
+                android:layout_marginEnd="@dimen/spacing_m"
+                app:layout_constraintTop_toBottomOf="@+id/placeDetailsNameContainer" />
+
+            <TextView
+                android:id="@+id/placeDetailsDistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_m"
+                android:text="@{@string/place_details_distance(place.distance)}"
+                android:textColor="@color/black_2"
+                app:layout_constraintStart_toStartOf="@+id/placeDetailsCategoriesChipGroup"
+                app:layout_constraintTop_toBottomOf="@+id/placeDetailsCategoriesChipGroup"
+                tools:text="Distance: 150m" />
+
+            <TextView
+                android:id="@+id/placeDetailsPhoneNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_m"
+                android:text="@{(place.info.phone != null) ? @string/place_details_phone_number(place.info.phone) : null}"
+                android:textColor="@color/black_2"
+                android:visibility="@{(place.info.phone != null) ? View.VISIBLE : View.GONE}"
+                app:layout_constraintStart_toStartOf="@+id/placeDetailsCategoriesChipGroup"
+                app:layout_constraintTop_toBottomOf="@+id/placeDetailsDistance"
+                tools:text="Phone Number: +111 11 123-45-67" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/placeDetailsMoreButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xl"
+                android:layout_marginBottom="@dimen/spacing_m"
+                android:text="@string/place_details_see_more_btn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/placeDetailsPhoneNumber" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

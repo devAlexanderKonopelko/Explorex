@@ -9,10 +9,10 @@ fun createHttpClient(): OkHttpClient =
     OkHttpClient
         .Builder()
         .addInterceptor { chain ->
-            val request = chain.request()
-            request.url.newBuilder()
+            val url = chain.request().url.newBuilder()
                 .addQueryParameter(API_KEY_QUERY, BuildConfig.PLACES_API_KEY)
                 .build()
+            val request = chain.request().newBuilder().url(url).build()
             chain.proceed(request)
         }
         .addNetworkInterceptor(HttpLoggingInterceptor().apply {

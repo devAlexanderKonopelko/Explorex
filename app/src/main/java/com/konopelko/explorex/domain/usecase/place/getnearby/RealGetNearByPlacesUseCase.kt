@@ -4,9 +4,9 @@ import com.konopelko.explorex.data.api.entity.response.place.getnearby.GetNearby
 import com.konopelko.explorex.domain.repostory.PlaceRepository
 import javax.inject.Inject
 
-class RealGetNearbyPlacesUseCase @Inject constructor(
+class RealGetNearByPlacesUseCase @Inject constructor(
     private val repository: PlaceRepository
-): GetNearbyPlacesUseCase {
+): GetNearByPlacesUseCase {
 
     override suspend fun invoke(latitude: Float, longitude: Float): GetNearbyPlacesResponse? =
         repository.getNearbyPlaces(latitude, longitude)

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="spacing_zero">0dp</dimen>
+    <dimen name="spacing_s">8dp</dimen>
+    <dimen name="spacing_m">16dp</dimen>
+    <dimen name="spacing_l">32dp</dimen>
+    <dimen name="spacing_xl">64dp</dimen>
+
+    <dimen name="size_xs5">6dp</dimen>
+    <dimen name="size_l28">60dp</dimen>
+    <dimen name="size_xl86">150dp</dimen>
+    <dimen name="size_250">250dp</dimen>
+
+    <dimen name="radius_5">5dp</dimen>
+
+    <dimen name="text_size_s4">20sp</dimen>
+
+</resources>

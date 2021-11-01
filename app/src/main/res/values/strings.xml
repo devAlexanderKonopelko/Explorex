@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Explorex</string>
+
+    <!-- Place Details Bottom Sheet -->
+    <string name="place_details_see_more_btn">See more</string>
+    <string name="place_details_distance">Distance: %1$.0fm</string>
+    <string name="place_details_phone_number">Phone number: <b>%1$s</b></string>
+
+    <!-- Give Location Permissions Dialog -->
+    <string name="dialog_permissions_location_title">Permission</string>
+    <string name="dialog_permissions_location_text">To work perfectly Explorex uses location permissions on your device. Please, confirm location permissions so we can continue providing you with the best service.
+    If you do not see any permissions, please, move to permission setting on your device.</string>
+    <string name="dialog_permissions_location_btn">Continue</string>
+
+    <!-- Turn On Location Dialog -->
+    <string name="dialog_turn_on_location_title">Location Turned Off</string>
+    <string name="dialog_turn_on_location_text">Seems like your GPS location is turned off. For correct work of Exporex, please turn your GPS option on</string>
+    <string name="dialog_turn_on_location_btn">Turn on</string>
 </resources>

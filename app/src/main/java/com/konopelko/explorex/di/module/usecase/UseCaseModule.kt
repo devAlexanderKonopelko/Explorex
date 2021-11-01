@@ -1,8 +1,8 @@
 package com.konopelko.explorex.di.module.usecase
 
 import com.konopelko.explorex.domain.repostory.PlaceRepository
-import com.konopelko.explorex.domain.usecase.place.getnearby.GetNearbyPlacesUseCase
-import com.konopelko.explorex.domain.usecase.place.getnearby.RealGetNearbyPlacesUseCase
+import com.konopelko.explorex.domain.usecase.place.getnearby.GetNearByPlacesUseCase
+import com.konopelko.explorex.domain.usecase.place.getnearby.RealGetNearByPlacesUseCase
 import dagger.Module
 import dagger.Provides
 import javax.inject.Inject
@@ -14,6 +14,6 @@ class UseCaseModule {
     @Singleton
     @Provides
     @Inject
-    fun provide(repository: PlaceRepository): GetNearbyPlacesUseCase =
-        RealGetNearbyPlacesUseCase(repository)
+    fun provide(repository: PlaceRepository): GetNearByPlacesUseCase =
+        RealGetNearByPlacesUseCase(repository)
 }
