@@ -11,6 +11,8 @@ Explore amazing things around you.
 - Shows details about Points of Interest
 - Show more details in browser on button click
 ---
+### Additional tools used:
+- TomTom Search API for getting information about places over the world. More on https://developer.tomtom.com/search-api/search-api-documentation
 ---
 ### Further improvements:
 - more structuring of the project (adding location manager, permissions manager, enhancing dependency injections)
