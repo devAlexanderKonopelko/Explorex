@@ -13,7 +13,7 @@ Explore amazing things around you.
 ---
 ---
 ### Further improvements:
-- more structuring of the project
+- more structuring of the project (adding location manager, permissions manager, enhancing dependency injections)
 - support for landscape orientation
 - updating the list of places in real time
 - support for changing location settings in real time
